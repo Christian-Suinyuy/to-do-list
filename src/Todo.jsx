@@ -38,6 +38,7 @@ function List(){
 
     return(
         <div className="parent-container">
+            <h1>To-Do List App</h1>
             <div className="inputArea">
                 <input type="text"  onChange={settingTodo} className="todo-input"/>
                 <button onClick={addingToList} className="adding">Add</button>
