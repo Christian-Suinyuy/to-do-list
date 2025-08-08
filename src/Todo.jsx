@@ -20,33 +20,18 @@ function List(){
 
     let edit = (index)=>{
         list[index].edit = !list[index].edit
-         console.log(list[index].edit)
          setList(l=> l.filter(()=> 1))
     }
 
-    let editHtml= (index)=>{
-        return(
-            <div className="item">
-                <input value={list[index].toDo} type="text" id="correced"/>
-                <button onClick={()=>{list[index].toDo =document.querySelector('#selected').value; edit(index) }}>Ok</button>
-            </div>
-        )
-    }
+   let update = (index)=>{
+   
+    list[index].toDo = document.querySelector('#corrected').value
+    setList(l=> l.filter(()=> 1))
 
-    let contentHtml = (todo)=>{
-        return (
-            <div key={index} className = {todo.completed ? " item completed" : "item"}>
-                    <h2>{todo.toDo}</h2>
-                    <button onClick={()=>completed(index)}>completed</button>
-                    <button onClick={()=>edit(index)}>Edit</button>
-                    <button onClick={()=>remove(index)}>remove</button>
-                </div>
-        )
-    }
+   }
 
     let completed = (index)=>{
          list[index].completed = !list[index].completed
-         console.log(list[index].completed)
          setList(l=> l.filter(()=> 1))
     }
 
@@ -61,7 +46,7 @@ function List(){
             {list.map((todo,index)=>{
                 if(todo.edit){
                     return(<div key={index} className="item">
-                                <input value={list[index].toDo} type="text" id="corrected"/>
+                                <input value={list[index].toDo} type="text" id="corrected" onChange={()=>update(index)}/>
                                 <button onClick={()=>{
                                     list[index].toDo =document.querySelector('#corrected').value; 
                                     edit(index) }}>Ok</button>

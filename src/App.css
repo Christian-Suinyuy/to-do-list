@@ -48,6 +48,7 @@ input {
   height: 2rem;
   border-radius: .4rem;
   border: none;
+  padding: 0 1rem;
 }
 
 button {
@@ -65,4 +66,8 @@ h2 {
 .completed{
   text-decoration: line-through;
   opacity: .5;
+}
+
+h2 {
+  padding: 0 .5rem;
 }
