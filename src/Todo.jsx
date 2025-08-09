@@ -9,9 +9,11 @@ function List(){
     }
     
     const addingToList = ()=>{
-        setList(l=>l=[...l, {toDo, completed: false, edit:false}])
-        setTodo("")
-        document.querySelector('.todo-input').value = ''
+        if(toDo){ 
+            setList(l=>l=[...l, {toDo, completed: false, edit:false}])
+            setTodo("")
+            document.querySelector('.todo-input').value = ''
+        }
     }
 
     function remove(index){
