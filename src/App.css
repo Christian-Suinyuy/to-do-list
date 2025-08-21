@@ -36,6 +36,19 @@ body{
   flex-direction: column;
 }
 
+@media (max-width: 700px) {
+  .parent-container{
+  width: 95%;
+  background: rgb(255, 187, 115);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  border-radius: .4em;
+  gap: 1em;
+  flex-direction: column;
+}
+}
+
 .inputArea{
   display: grid;
   grid-template-columns: 1fr .4fr;
